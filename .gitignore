@@ -1,3 +1,6 @@
 plugged/*
 spell/
 coc-settings.json
+.netrwhist
+black/
+autoload/*

@@ -24,7 +24,8 @@ set clipboard=unnamedplus                   " Copy paste between vim and everyth
 set incsearch
 set signcolumn=no
 set laststatus=2
-
+"set ignorecase                             " Insesitive case search by default
+set smartcase                               " Insesitive case search by default
 
 filetype plugin indent on
 syntax on
@@ -34,7 +35,7 @@ cmap w!! w !sudo tee %
 
 " Special File extentions
 au BufRead,BufNewFile *.{html,tex,md,ms} setlocal textwidth=80
-au BufRead,BufNewFile *.{cir,sp,spice,mod} setlocal filetype=spice
+au BufRead,BufNewFile *.{cir,sp,spice,mod,lib} setlocal filetype=spice
+au BufRead,BufNewFile *.{CIR,SP,SPICE,MOD,LIB} setlocal filetype=spice
 au BufNewFile,BufRead *.ms set filetype=groff
 au BufNewFile,BufRead /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-

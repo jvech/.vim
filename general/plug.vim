@@ -7,13 +7,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     Plug 'mattn/emmet-vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'sainnhe/sonokai'
     Plug 'bfrg/vim-cpp-modern'
     Plug 'https://github.com/neovimhaskell/haskell-vim'
+    Plug 'sainnhe/sonokai'
+    Plug 'sainnhe/edge'
 call plug#end()
 
 " ============= Markdown preview ==============================================
-let g:mkdp_browser = 'surf'
+let g:mkdp_browser = 'firefox'
 
 " ============== Emmet          ===============================================
 let g:user_emmet_leader_key=','
@@ -31,26 +32,26 @@ if has('termguicolors')
   set termguicolors
 endif
 
-" The configuration options should be placed before `colorscheme sonokai`.
-let g:sonokai_style = 'default'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-let g:sonokai_better_performance = 1
-let g:sonokai_diagnostic_text_highlight = 1
-let g:sonokai_spell_foreground = 'colored'
-"let g:sonokai_diagnostic_virtual_text = 'colored'
-
-colorscheme sonokai
+" Edge
+let g:edge_style = 'aura'
+let g:edge_better_performance = 1
+let g:edge_enable_italic = 1
+let g:edge_dim_foreground = 1
+let g:edge_disable_italic_comment = 1
+let g:edge_transparent_background = 0
+let g:edge_spell_foreground = 'colored'
+let g:edge_diagnostic_text_highlight = 1
+let g:edge_diagnostic_line_highlight = 1
+colorscheme edge
 
 " ============== Coc ===================================================
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-" Used in the tab autocompletion for coc
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
