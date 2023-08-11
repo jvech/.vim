@@ -14,10 +14,10 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " ============= Markdown preview ==============================================
-let g:mkdp_browser = 'firefox'
+let g:mkdp_browser = 'vimb'
 
 " ============== Emmet          ===============================================
-let g:user_emmet_leader_key=','
+"let g:user_emmet_leader_key=','
 
 " ============== vim latex      ===============================================
 let g:tex_flavor = 'latex'
@@ -67,3 +67,7 @@ let g:haskell_indent_before_where = -2
 let g:haskell_indent_where = 6
 let g:haskell_indent_after_bare_where = 2
 let g:haskell_indent_guard = 4
+
+" ============= Vimtex ================================================
+let g:vimtex_compiler_method = 'latexmk'
+let g:vimtex_view_method = 'zathura'

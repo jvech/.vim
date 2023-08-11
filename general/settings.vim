@@ -24,8 +24,8 @@ set clipboard=unnamedplus                   " Copy paste between vim and everyth
 set incsearch
 set signcolumn=no
 set laststatus=2
-"set ignorecase                             " Insesitive case search by default
-set smartcase                               " Insesitive case search by default
+set ignorecase                              " Insesitive case search by default
+set smartcase                               " If search is lower be case insensitive
 
 filetype plugin indent on
 syntax on
