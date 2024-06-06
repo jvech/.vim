@@ -4,3 +4,5 @@ coc-settings.json
 .netrwhist
 black/
 autoload/*
+pack/plugins/start/*
+pack/plugins/opt/*

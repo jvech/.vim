@@ -37,5 +37,6 @@ cmap w!! w !sudo tee %
 au BufRead,BufNewFile *.{html,tex,md,ms} setlocal textwidth=80
 au BufRead,BufNewFile *.{cir,sp,spice,mod,lib} setlocal filetype=spice
 au BufRead,BufNewFile *.{CIR,SP,SPICE,MOD,LIB} setlocal filetype=spice
-au BufNewFile,BufRead *.ms set filetype=groff
-au BufNewFile,BufRead /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+au BufNewFile,BufRead *.ms setlocal filetype=groff
+au BufNewFile,BufRead /tmp/calcurse*,~/.calcurse/notes/* setlocal filetype=markdown
+au BufRead,BufNewFile *.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
