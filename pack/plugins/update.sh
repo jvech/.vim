@@ -1,3 +1,3 @@
 #!/usr/bin/sh
 
-find $PWD -maxdepth 2 -mindepth 2 -exec git -C '{}' pull \;
+find -maxdepth 2 -mindepth 2 -exec echo '{}' \; -and -exec git -C '{}' pull \;

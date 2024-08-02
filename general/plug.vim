@@ -6,7 +6,8 @@ packadd markdown-preview.nvim
 let g:mkdp_browser = 'vimb'
 
 " ============== Emmet          ===============================================
-let g:user_emmet_leader_key=','
+au BufRead,BufNewFile *.{html,css} let user_emmet_leader_key=','
+au BufRead,BufNewFile *.{html,css} packadd emmet-vim
 
 
 " ============== Completion prompt ============================================
